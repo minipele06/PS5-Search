@@ -21,7 +21,7 @@ client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 URL = "https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815"
 page = requests.get(URL,headers={"User-Agent":"Defined"})
 soup = BeautifulSoup(page.content, "html.parser")
-if soup.find(class_="prod-blitz-copy-message") is not None:
+if soup.find(class_="display-block-xs font-bold") is not None:
     client = SendGridAPIClient(SENDGRID_API_KEY) #> <class 'sendgrid.sendgrid.SendGridAPIClient>
     print("CLIENT:", type(client))
     subject = "PS5 Update"
