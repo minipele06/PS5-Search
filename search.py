@@ -36,6 +36,9 @@ else:
     content = "Hello, the PS5 is available at Walmart! https://www.walmart.com/ip/Sony-PlayStation-5-Digital-Edition/493824815"
     message = client.messages.create(to=RECIPIENT_SMS, from_=SENDER_SMS, body=content)
 
+# AUTHENTICATE
+client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+
 URL = "https://www.bestbuy.com/site/sony-playstation-5-digital-edition-console/6430161.p?skuId=6430161"
 page = requests.get(URL,headers={"User-Agent":"Defined"})
 soup = BeautifulSoup(page.content, "html.parser")
